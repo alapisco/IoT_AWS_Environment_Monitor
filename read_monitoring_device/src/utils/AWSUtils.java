@@ -25,8 +25,7 @@ public class AWSUtils {
     }
 
     public void sendDataToAWS(double temperature, double humidity, double pressure, double luminosity, double spl) {
-        
-        
+
         executeCommand(temperature, humidity, pressure, luminosity, spl);
 
     }
@@ -34,12 +33,23 @@ public class AWSUtils {
     private int executeCommand(double temperature, double humidity, double pressure, double luminosity, double spl) {
 
         String command = "node " + awsScript + " " + keyPath + " " + certPath + " " + caPath + " " + clientID + " " + region
-                         + " " +temperature+ " " +humidity+ " " +pressure+ " " +luminosity+ " " +spl;
+                + " " + temperature + " " + humidity + " " + pressure + " " + luminosity + " " + spl;
         ProcessBuilder pb = new ProcessBuilder(command.split(" "));
         try {
             Process p = pb.start();
             p.waitFor();
-            return p.exitValue();
+            int exitValue = p.exitValue();
+
+            if (exitValue == 0) {
+                System.out.println("Successfully sent data to AWS IoT");
+            } else {
+                System.out.println("Could not sent data to AWS IoT");
+                System.out.println("Command:");
+                System.out.println(command);
+
+            }
+
+            return exitValue;
 
         } catch (Exception ex) {
 
