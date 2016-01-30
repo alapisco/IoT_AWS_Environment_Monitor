@@ -27,7 +27,7 @@ public class AWSUtils {
     public void sendDataToAWS(double temperature, double humidity, double pressure, double luminosity, double spl) {
         
         
-        System.out.println(executeCommand(temperature, humidity, pressure, luminosity, spl));
+        executeCommand(temperature, humidity, pressure, luminosity, spl);
 
     }
 
@@ -52,3 +52,4 @@ public class AWSUtils {
     }
 
 }
+
