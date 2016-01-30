@@ -62,7 +62,6 @@ thingShadows.on('connect', function() {
   }, 2500 );
 
 
-  // Code below just logs messages for info/debugging
   thingShadows.on('status',
     function(thingName, stat, clientToken, stateObject) {
        console.log(stat+":"+JSON.stringify(stateObject));
