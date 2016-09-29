@@ -30,6 +30,10 @@ It sends data to the AWS IoT Platform
 - The read_monitoring_device folder contains the application that reads the
   sensors , logs data and communicates with AWS
 
+- The sensors_lib folder contains a Java library coded for this project that
+  reads analog and digital data from the sensots and converts it to a known measure unit
+
+
 - The update_AWS_device folder contains a javascript application that uses the
   official aws-iot-device-sdk for the raspberry to communicate with AWS
 
