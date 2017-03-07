@@ -11,8 +11,8 @@ public class HTU21DF {
     private final static int ADDRESS = 0x40;
 
     // Commands
-    private final static int TRIGGER_TEMPERATURE_MEASUREMENT = 0xE3;
-    private final static int TRIGGER_HUMIDITY_MEASUREMENT = 0xE5;
+    private final static int TRIGGER_TEMPERATURE_MEASUREMENT = 0xF3;
+    private final static int TRIGGER_HUMIDITY_MEASUREMENT = 0xF5;
     private final static int READ_USER_REGISTER = 0xE7;
     private final static int SOFT_RESET = 0xFE;
 
